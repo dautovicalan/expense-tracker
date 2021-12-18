@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "type": "income",
+      "value": 600
+    },
+    {
+      "id": 2,
+      "type": "food",
+      "value": 10,
+      "details": [
+        {"id":1, "name": "test", "value": 50}
+      ]
+    },
+    {
+      "id": 3,
+      "type": "going-out",
+      "value": 160
+    },
+    {
+      "id": 4,
+      "type": "other",
+      "value": 23
+    }
+  ]
+}
