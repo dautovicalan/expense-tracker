@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import updateData from "../Hooks/updateData";
 import ExpenseChart from "../components/ExpenseChart";
 
-const MainPage = ({ data }) => {
+const MainPage = ({ data, food, setFood }) => {
   const [income, setIncome] = useState(data[0]);
-  const [food, setFood] = useState(data[1]);
   const [goingOut, setGoingOut] = useState(data[2]);
   const [other, setOther] = useState(data[3]);
 
+  // !Problem je u sto ostaju podatci u ovom stateu i a fetcher ne fetcha podatke koji su novi aktualizirani
   const handleSubmit = (e, expenseName, expenseType, expenseMoney) => {
     e.preventDefault();
     const money = expenseMoney;
@@ -18,11 +18,14 @@ const MainPage = ({ data }) => {
       case "food":
         let newFood = food.value + money;
         let newDetails = food.details;
-        newDetails.push({name: expenseName.current.value, value: expenseMoney});
+        newDetails.push({
+          name: expenseName.current.value,
+          value: expenseMoney,
+        });
         let foodimier = {
           ...food,
           value: newFood,
-          details: newDetails
+          details: newDetails,
         };
         setFood((food) => ({ ...food, value: newFood }));
         updateData(foodimier.id, foodimier);

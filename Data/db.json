@@ -8,8 +8,13 @@
     {
       "id": 2,
       "type": "food",
-      "value": 14.420000000000003,
-      "details": []
+      "value": 15.02,
+      "details": [
+        {
+          "name": "123test",
+          "value": 0.12
+        }
+      ]
     },
     {
       "id": 3,

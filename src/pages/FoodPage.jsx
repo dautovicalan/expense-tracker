@@ -3,7 +3,7 @@ import { useState } from "react";
 import AddExpense from "../components/AddExpense";
 import updateData from "../Hooks/updateData";
 
-const FoodPage = ({ data }) => {
+const FoodPage = ({ data, setFood }) => {
   const { id, type, value, details } = data;
   const [arrayOfExpenses, setArrayOfExpenses] = useState(details);
 
@@ -15,9 +15,9 @@ const FoodPage = ({ data }) => {
       (element) => element.name !== expenseName
     );
     updateData(id, { ...data, details: newElement });
+    setFood({...data, details: newElement});
   };
 
-  console.log(arrayOfExpenses);
   return (
     <div>
       <h2>Header</h2>
