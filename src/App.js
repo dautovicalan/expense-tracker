@@ -1,60 +1,32 @@
 import './App.css';
-import AddExpense from './components/AddExpense';
-import Overview from './components/Overview';
-import { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import MainPage from './pages/MainPage';
+import FoodPage from './pages/FoodPage';
 import useFetch from './Hooks/useFetch';
-import updateData from './Hooks/updateData';
-import ExpenseChart from './components/ExpenseChart';
+import { useState, useEffect } from "react";
+import updateData from "./Hooks/updateData";
 
 function App() {
-  const data = useFetch();
+  
+  const fetchedData = useFetch();
 
-  const [income, setIncome] = useState(null);
-  const [food, setFood] = useState(null);
-  const [goingOut, setGoingOut] = useState(null);
-  const [other, setOther] = useState(null);
+  const[data, setData] = useState(fetchedData);
 
   useEffect(() => {
-    setIncome(data[0]);
-    setFood(data[1]);
-    setGoingOut(data[2]);
-    setOther(data[3]);
-  }, [data]);
-  console.log(data);
-
-  const handleSubmit = (e, expenseName, expenseType, expenseMoney) =>{
-    e.preventDefault();
-    const money = expenseMoney;
-    switch (expenseType.current.value) {
-      case "food":
-        let newFood = food.value + money;
-        let foodimier = {...food, value: newFood};
-        updateData(foodimier.id, foodimier);
-        setFood(food => ({...food, value: newFood}));
-        break;
-      case "going Out":
-        let newGoingOut = goingOut.value + money
-        let ajvanka = ({...goingOut, value: newGoingOut});
-        updateData(ajvanka.id, ajvanka);
-        setGoingOut(goingOut => ({...goingOut, value: newGoingOut}));
-        break;
-      case "other":
-        let newOther = other.value + money;
-        let dajOther = ({...other, value: newOther});
-        updateData(dajOther.id, dajOther);
-        setOther(other => ({...other, value: newOther}));
-        break;
-      default:
-        alert("Something went wrong");
-        break;
-    }
-  }
+    setData(fetchedData);
+  }, [fetchedData]);
 
   return (
     <div className="App">
-      {income && food && goingOut && other && <Overview income={income.value} food={food.value} goingOut={goingOut.value} other={other.value}/>}
-      {food && goingOut && other && <ExpenseChart food={food.value} goingOut={goingOut.value} other={other.value}/>}
-      <AddExpense handleSubmit={handleSubmit}/>
+      <Router>
+        <Routes>
+          <Route path="/" element={data.length !== 0 && <MainPage data={data}/>}/>
+          <Route path="income" element={<p>Bok ja sam income</p>}/>
+          <Route path="food" element={data.length !== 0 && <FoodPage data={data[1]}/>}/>
+          <Route path="going-out" element={<p>Bok ja sam goind oiut</p>}/>
+          <Route path="other" element={<p>Bok ja sam other</p>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -10,9 +10,8 @@ const ExpenseChart = ({ food, goingOut, other }) => {
           { title: "Going out", value: goingOut, color: "#2212cc" },
           { title: "Other", value: other, color: "#ccc312" },
         ]}
-        label={({ dataEntry }) => dataEntry.value}
+        label={({ dataEntry }) => Number(dataEntry.value).toFixed(2)}
       />
-      ;
     </div>
   );
 };
