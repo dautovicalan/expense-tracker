@@ -8,7 +8,7 @@ import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 
 const MainPage = () => {
-  // TODO Add expense fix, with useContext
+  // TODO Add expense fix, with useContext, handleSubmit fix
   return (
     <React.Fragment>
       <Overview />
