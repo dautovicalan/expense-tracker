@@ -2,19 +2,11 @@ import React from "react";
 import styles from "../styles/Overview.module.css";
 import { useNavigate } from "react-router-dom";
 
-const dajfood = (details) => {
-  let test = 0;
-  details.map((element) => {
-    test += element.value;
-  });
-  return test;
-};
+
 
 const Overview = ({ income, food, goingOut, other }) => {
   const navigate = useNavigate();
-  const foodValue = dajfood(food.details);
-  const goingOutValue = dajfood(goingOut.details);
-  const otherValue = dajfood(other.details);
+  
 
   console.log(foodValue, goingOutValue  , otherValue);
 

@@ -5,11 +5,25 @@ import { useState, useEffect } from "react";
 import updateData from "../Hooks/updateData";
 import ExpenseChart from "../components/ExpenseChart";
 
+const dajfood = (details) => {
+  let test = 0;
+  details.map((element) => {
+    test += element.value;
+  });
+  return test;
+};
+
 const MainPage = ({ data }) => {
   const [income, setIncome] = useState(data[0]);
   const [food, setFood] = useState(data[1]);
   const [goingOut, setGoingOut] = useState(data[2]);
   const [other, setOther] = useState(data[3]);
+
+  // !Fix the calculate function error.
+  // TODO Pass values as props to other funcionts. And pass them to the Chart
+  const foodValue = dajfood(food.details);
+  const goingOutValue = dajfood(goingOut.details);
+  const otherValue = dajfood(other.details);
 
   const handleSubmit = (e, expenseName, expenseType, expenseMoney) => {
     e.preventDefault();
