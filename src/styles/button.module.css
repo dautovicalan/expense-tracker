@@ -1,0 +1,10 @@
+.go-back-button {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 3rem;
+}
+
+.go-back-button:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}

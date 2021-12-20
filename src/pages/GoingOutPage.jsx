@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import AddExpense from "../components/AddExpense";
 import GoBackButton from "../components/GoBackButton";
 import updateData from "../Hooks/updateData";
 
-const FoodPage = ({ data, setFood }) => {
+const GoingOutPage = ({ data, setGoingOut }) => {
   const { id, type, value, details } = data;
   const [arrayOfExpenses, setArrayOfExpenses] = useState(details);
 
@@ -16,7 +15,7 @@ const FoodPage = ({ data, setFood }) => {
       (element) => element.name !== expenseName
     );
     updateData(id, { ...data, details: newElement });
-    setFood({ ...data, details: newElement });
+    setGoingOut({ ...data, details: newElement });
   };
 
   return (
@@ -41,4 +40,4 @@ const FoodPage = ({ data, setFood }) => {
   );
 };
 
-export default FoodPage;
+export default GoingOutPage;

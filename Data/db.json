@@ -8,23 +8,25 @@
     {
       "id": 2,
       "type": "food",
-      "value": 15.02,
-      "details": [
-        {
-          "name": "123test",
-          "value": 0.12
-        }
-      ]
+      "value": 123,
+      "details": []
     },
     {
       "id": 3,
       "type": "going-out",
-      "value": 175.36
+      "value": 175.36,
+      "details": []
     },
     {
       "id": 4,
       "type": "other",
-      "value": 110.05999999999995
+      "value": 110.05999999999995,
+      "details": [
+        {
+          "name": "test",
+          "value": 123
+        }
+      ]
     }
   ]
 }
