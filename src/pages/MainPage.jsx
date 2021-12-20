@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import updateData from "../Hooks/updateData";
 import ExpenseChart from "../components/ExpenseChart";
 
-const MainPage = ({ data, food, setFood }) => {
+const MainPage = ({ data }) => {
   const [income, setIncome] = useState(data[0]);
+  const [food, setFood] = useState(data[1]);
   const [goingOut, setGoingOut] = useState(data[2]);
   const [other, setOther] = useState(data[3]);
 
-  // !Problem je u sto ostaju podatci u ovom stateu i a fetcher ne fetcha podatke koji su novi aktualizirani
   const handleSubmit = (e, expenseName, expenseType, expenseMoney) => {
     e.preventDefault();
     const money = expenseMoney;
@@ -32,13 +32,27 @@ const MainPage = ({ data, food, setFood }) => {
         break;
       case "going Out":
         let newGoingOut = goingOut.value + money;
-        let ajvanka = { ...goingOut, value: newGoingOut };
-        updateData(ajvanka.id, ajvanka);
+        let newDetailsGoingOut = goingOut.details;
+        newDetailsGoingOut.push({
+          name: expenseName.current.value,
+          value: expenseMoney,
+        });
+        let ajvanka = {
+          ...goingOut,
+          value: newGoingOut,
+          details: newDetailsGoingOut,
+        };
         setGoingOut((goingOut) => ({ ...goingOut, value: newGoingOut }));
+        updateData(ajvanka.id, ajvanka);
         break;
       case "other":
         let newOther = other.value + money;
-        let dajOther = { ...other, value: newOther };
+        let newDetailsOther = other.details;
+        newDetailsOther.push({
+          name: expenseName.current.value,
+          value: expenseMoney,
+        });
+        let dajOther = { ...other, value: newOther, details: newDetailsOther };
         updateData(dajOther.id, dajOther);
         setOther((other) => ({ ...other, value: newOther }));
         break;

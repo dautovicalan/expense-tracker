@@ -3,29 +3,30 @@
     {
       "id": 1,
       "type": "income",
-      "value": 600
+      "value": 0
     },
     {
       "id": 2,
       "type": "food",
-      "value": 123,
-      "details": []
+      "value": 12,
+      "details": [
+        {"name": "test", "value": 12}
+      ]
     },
     {
       "id": 3,
       "type": "going-out",
-      "value": 175.36,
-      "details": []
+      "value": 12,
+      "details": [
+        {"name": "test", "value": 12}
+      ]
     },
     {
       "id": 4,
       "type": "other",
-      "value": 110.05999999999995,
+      "value": 12,
       "details": [
-        {
-          "name": "test",
-          "value": 123
-        }
+        {"name": "test", "value": 12}
       ]
     }
   ]
