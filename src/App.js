@@ -3,40 +3,32 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import MainPage from './pages/MainPage';
 import FoodPage from './pages/FoodPage';
 import useFetch from './Hooks/useFetch';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import GoingOutPage from './pages/GoingOutPage';
 import OtherPage from './pages/OtherPage';
+import { DataContext } from './Context/DataContext';
 
 
 function App() {
   
   const fetchedData = useFetch();
-
   const[data, setData] = useState(fetchedData);
-  const [food, setFood] = useState(fetchedData[1]);
-  const[goingOut, setGoingOut] = useState(fetchedData[2]);
-  const[other, setOther] = useState(fetchedData[3]);
+  const dataValue = useMemo(() => ({data}),[data, setData]);
 
-  
-
-
-  useEffect(() => {
-    setData(fetchedData);
-    setFood(fetchedData[1]);
-    setGoingOut(fetchedData[2]);
-    setOther(fetchedData[3]);
-  }, [fetchedData]);
+  useEffect(() => setData(fetchedData), [fetchedData]);
 
   return (
     <div className="App">
       <Router>
+      <DataContext.Provider value={dataValue}>
         <Routes>
-          <Route path="/" element={data.length !== 0 && <MainPage data={data} />}/>
-          <Route path="income" element={<p>Bok ja sam income</p>}/>
-          <Route path="food" element={data.length !== 0 && <FoodPage data={food} setFood={setFood}/>}/>
-          <Route path="going-out" element={data.length !== 0 && <GoingOutPage data={goingOut} setGoingOut={setGoingOut}/>}/>
-          <Route path="other" element={data.length !== 0 && <OtherPage data={other} setOther={setOther}/>}/>
+            <Route path="/" element={dataValue.data.length !== 0 && <MainPage />}/>
+            {/* <Route path="income" element={<p>Bok ja sam income</p>}/>
+            <Route path="food" element={data.length !== 0 && <FoodPage data={food} setFood={setFood}/>}/>
+            <Route path="going-out" element={data.length !== 0 && <GoingOutPage data={goingOut} setGoingOut={setGoingOut}/>}/>
+            <Route path="other" element={data.length !== 0 && <OtherPage data={other} setOther={setOther}/>}/> */}
         </Routes>
+      </DataContext.Provider>
       </Router>
     </div>
   );

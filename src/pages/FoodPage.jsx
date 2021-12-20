@@ -3,6 +3,8 @@ import { useState } from "react";
 import AddExpense from "../components/AddExpense";
 import GoBackButton from "../components/GoBackButton";
 import updateData from "../Hooks/updateData";
+import { DataContext } from "../Context/DataContext";
+import { useContext } from "react";
 
 const dajfood = (details) => {
   let test = 0;
@@ -17,6 +19,9 @@ const FoodPage = ({ data, setFood }) => {
   const [arrayOfExpenses, setArrayOfExpenses] = useState(details);
 
   const foodValue = dajfood(data.details);
+
+  const textContext = useContext(DataContext);
+  console.log(textContext);
 
   const handleClick = (expenseName) => {
     setArrayOfExpenses((arrayOfExpenses) =>
