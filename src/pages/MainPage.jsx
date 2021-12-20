@@ -7,24 +7,15 @@ import ExpenseChart from "../components/ExpenseChart";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 
-const dajfood = (details) => {
-  let test = 0;
-  details.map((element) => {
-    test += element.value;
-  });
-  return test;
-};
-
 const MainPage = () => {
-  const { data } = useContext(DataContext);
-  console.log(data);
-
+  // TODO Add expense fix, with useContext
   return (
     <React.Fragment>
-      <Overview/>
+      <Overview />
       {/* <Overview />
       <ExpenseChart />
       <AddExpense /> */}
+      <AddExpense/>
     </React.Fragment>
   );
 };

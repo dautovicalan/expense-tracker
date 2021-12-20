@@ -13,7 +13,7 @@ function App() {
   
   const fetchedData = useFetch();
   const[data, setData] = useState(fetchedData);
-  const dataValue = useMemo(() => ({data}),[data, setData]);
+  const dataValue = useMemo(() => ({data, setData}),[data, setData]);
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
