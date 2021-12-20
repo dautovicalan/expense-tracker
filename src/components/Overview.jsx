@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { DataContext } from "../Context/DataContext";
 
 const Overview = () => {
-  const navigate = useNavigate();
   const { data } = useContext(DataContext);
   return (
     <React.Fragment>
