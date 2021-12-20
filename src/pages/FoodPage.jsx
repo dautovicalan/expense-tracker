@@ -4,9 +4,19 @@ import AddExpense from "../components/AddExpense";
 import GoBackButton from "../components/GoBackButton";
 import updateData from "../Hooks/updateData";
 
+const dajfood = (details) => {
+  let test = 0;
+  details.map((element) => {
+    test += element.value;
+  });
+  return test;
+};
+
 const FoodPage = ({ data, setFood }) => {
   const { id, type, value, details } = data;
   const [arrayOfExpenses, setArrayOfExpenses] = useState(details);
+
+  const foodValue = dajfood(data.details);
 
   const handleClick = (expenseName) => {
     setArrayOfExpenses((arrayOfExpenses) =>
@@ -22,7 +32,7 @@ const FoodPage = ({ data, setFood }) => {
   return (
     <div>
       <h2>Header</h2>
-      <h2>Sum Value: {Number(value).toFixed(2)}</h2>
+      <h2>Sum Value: {Number(foodValue).toFixed(2)}</h2>
       {arrayOfExpenses.map((element, index) => {
         return (
           <div

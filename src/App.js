@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import GoingOutPage from './pages/GoingOutPage';
 import OtherPage from './pages/OtherPage';
 
+
 function App() {
   
   const fetchedData = useFetch();
@@ -15,6 +16,8 @@ function App() {
   const [food, setFood] = useState(fetchedData[1]);
   const[goingOut, setGoingOut] = useState(fetchedData[2]);
   const[other, setOther] = useState(fetchedData[3]);
+
+  
 
 
   useEffect(() => {

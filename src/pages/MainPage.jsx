@@ -80,9 +80,9 @@ const MainPage = ({ data }) => {
       {income && food && goingOut && other && (
         <Overview
           income={income}
-          food={food}
-          goingOut={goingOut}
-          other={other}
+          food={foodValue}
+          goingOut={goingOutValue}
+          other={otherValue}
         />
       )}
       {food && goingOut && other && (

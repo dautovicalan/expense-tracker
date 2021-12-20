@@ -3,9 +3,19 @@ import { useState } from "react";
 import updateData from "../Hooks/updateData";
 import GoBackButton from "../components/GoBackButton";
 
+const dajfood = (details) => {
+  let test = 0;
+  details.map((element) => {
+    test += element.value;
+  });
+  return test;
+};
+
 const OtherPage = ({ data, setOther }) => {
   const { id, type, value, details } = data;
   const [arrayOfExpenses, setArrayOfExpenses] = useState(details);
+
+  const otherValue = dajfood(data.details);
 
   const handleClick = (expenseName) => {
     setArrayOfExpenses((arrayOfExpenses) =>
@@ -21,7 +31,7 @@ const OtherPage = ({ data, setOther }) => {
   return (
     <div>
       <h2>Header</h2>
-      <h2>Sum Value: {Number(value).toFixed(2)}</h2>
+      <h2>Sum Value: {Number(otherValue).toFixed(2)}</h2>
       {arrayOfExpenses.map((element, index) => {
         return (
           <div

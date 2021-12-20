@@ -8,25 +8,37 @@
     {
       "id": 2,
       "type": "food",
-      "value": 12,
-      "details": [
-        {"name": "test", "value": 12}
-      ]
+      "value": 24.34,
+      "details": []
     },
     {
       "id": 3,
       "type": "going-out",
-      "value": 12,
+      "value": 24.22,
       "details": [
-        {"name": "test", "value": 12}
+        {
+          "name": "test",
+          "value": 12
+        },
+        {
+          "name": "sasasa",
+          "value": 12.22
+        }
       ]
     },
     {
       "id": 4,
       "type": "other",
-      "value": 12,
+      "value": 24.22,
       "details": [
-        {"name": "test", "value": 12}
+        {
+          "name": "test",
+          "value": 12
+        },
+        {
+          "name": "sasasa",
+          "value": 12.22
+        }
       ]
     }
   ]
