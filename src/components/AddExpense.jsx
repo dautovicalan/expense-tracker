@@ -14,27 +14,33 @@ const AddExpense = ({ handleSubmit }) => {
   return (
     <div className={styles.add_container}>
       <h2>Add new Expense</h2>
-      <form onSubmit={(e) => handleSubmit(e, expenseName, expenseType, money)}>
+      <form
+        onSubmit={(e) => handleSubmit(e, expenseName, expenseType, money)}
+        className={styles.form_container}
+      >
         <label htmlFor="describe-expension">Name of Expension</label>
         <input
           type="text"
           placeholder="Describe your expense"
           id="describe-expension"
           ref={expenseName}
+          autoComplete="off"
         />
-        <div>
-          <label htmlFor="expense-type">Choose Type</label>
-          <select name="expense-type" id="expense-type" ref={expenseType}>
-            <option value="food">Food</option>
-            <option value="going Out">Going out</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div className="money-input">
-          <label htmlFor="money">Money</label>
-          <MoneyInput value={money} onChange={handleChange} />
-        </div>
-        <input type="submit" value={`Add Expense`} />
+
+        <label htmlFor="expense-type">Choose Type</label>
+        <select name="expense-type" id="expense-type" ref={expenseType}>
+          <option value="food">Food</option>
+          <option value="going Out">Going out</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label htmlFor="money">Money</label>
+        <MoneyInput value={money} onChange={handleChange} />
+        <input
+          type="submit"
+          value={`Add Expense`}
+          className={styles["button-19"]}
+        />
       </form>
     </div>
   );

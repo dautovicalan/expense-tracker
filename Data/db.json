@@ -15,31 +15,13 @@
       "id": 3,
       "type": "going-out",
       "value": 24.22,
-      "details": [
-        {
-          "name": "test",
-          "value": 12
-        },
-        {
-          "name": "sasasa",
-          "value": 12.22
-        }
-      ]
+      "details": []
     },
     {
       "id": 4,
       "type": "other",
       "value": 24.22,
-      "details": [
-        {
-          "name": "test",
-          "value": 12
-        },
-        {
-          "name": "sasasa",
-          "value": 12.22
-        }
-      ]
+      "details": []
     }
   ]
 }

@@ -11,6 +11,7 @@ const ExpenseChart = ({ food, goingOut, other }) => {
           { title: "Other", value: other, color: "#ccc312" },
         ]}
         label={({ dataEntry }) => dataEntry.title}
+        animate={true}
       />
     </div>
   );
