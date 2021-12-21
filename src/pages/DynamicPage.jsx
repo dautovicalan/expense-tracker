@@ -6,7 +6,6 @@ const DynamicPage = () => {
   const { id } = useParams();
   const { data, isLoading } = useFetch(`data/${id}`);
   const {id: typeId, type, value, details} = data;
-  console.log(details);
 
   return (
     <div>

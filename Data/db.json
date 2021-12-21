@@ -3,7 +3,11 @@
     {
       "id": 1,
       "type": "income",
-      "value": 0
+      "value": 0,
+      "details": [
+        {"name": "income", "value": 24.34},
+        {"name": "test2", "value": 24.34}
+      ]
     },
     {
       "id": 2,
