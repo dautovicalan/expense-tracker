@@ -1,39 +1,67 @@
 {
   "data": [
     {
-      "id": 1,
+      "id": 0,
       "type": "income",
       "value": 0,
       "details": [
-        {"name": "income", "value": 24.34},
-        {"name": "test2", "value": 24.34}
+        {
+          "name": "income",
+          "value": 24.34
+        },
+        {
+          "name": "test2",
+          "value": 24.34
+        },
+        {
+          "name": "final test",
+          "value": 121.21
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Food",
+      "value": 24.34,
+      "details": [
+        {
+          "name": "test",
+          "value": 24.34
+        },
+        {
+          "name": "test2",
+          "value": 24.34
+        }
       ]
     },
     {
       "id": 2,
-      "type": "food",
-      "value": 24.34,
+      "type": "Going Out",
+      "value": 24.22,
       "details": [
-        {"name": "test", "value": 24.34},
-        {"name": "test2", "value": 24.34}
+        {
+          "name": "goingout",
+          "value": 24.34
+        },
+        {
+          "name": "test2",
+          "value": 24.34
+        }
       ]
     },
     {
       "id": 3,
-      "type": "going-out",
+      "type": "Other",
       "value": 24.22,
       "details": [
-        {"name": "goingout", "value": 24.34},
-        {"name": "test2", "value": 24.34}
-      ]
-    },
-    {
-      "id": 4,
-      "type": "other",
-      "value": 24.22,
-      "details": [
-        {"name": "other", "value": 24.34},
-        {"name": "test2", "value": 24.34}
+        {
+          "name": "other",
+          "value": 24.34
+        },
+        {
+          "name": "test2",
+          "value": 24.34
+        }
       ]
     }
   ]

@@ -1,11 +1,17 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/AddExpense.module.css";
 import MoneyInput from "@rschpdr/react-money-input";
+import updateData from "../Hooks/updateData";
+import { DataContext } from "../Context/DataContext";
+import { useContext } from "react";
+import { handleSubmit } from "../functions/handleSubmit";
 
-const AddExpense = ({ handleSubmit }) => {
+const AddExpense = () => {
   const expenseName = useRef();
   const expenseType = useRef();
   const [money, setMoney] = useState(0);
+
+  const { data } = useContext(DataContext);
 
   const handleChange = (e) => {
     setMoney(e.target.value);
@@ -15,7 +21,16 @@ const AddExpense = ({ handleSubmit }) => {
     <div className={styles.add_container}>
       <h2>Add new Expense</h2>
       <form
-        onSubmit={(e) => handleSubmit(e, expenseName, expenseType, money)}
+        onSubmit={(e) =>
+          handleSubmit(
+            e,
+            expenseType.current.value,
+            expenseType.current.options[expenseType.current.selectedIndex].text,
+            expenseName.current.value,
+            money,
+            data
+          )
+        }
         className={styles.form_container}
       >
         <label htmlFor="describe-expension">Name of Expension</label>
@@ -25,13 +40,19 @@ const AddExpense = ({ handleSubmit }) => {
           id="describe-expension"
           ref={expenseName}
           autoComplete="off"
+          required
         />
 
         <label htmlFor="expense-type">Choose Type</label>
-        <select name="expense-type" id="expense-type" ref={expenseType}>
-          <option value="food">Food</option>
-          <option value="going Out">Going out</option>
-          <option value="other">Other</option>
+        <select
+          name="expense-type"
+          id="expense-type"
+          ref={expenseType}
+          required
+        >
+          <option value="1">Food</option>
+          <option value="2">Going Out</option>
+          <option value="3">Other</option>
         </select>
 
         <label htmlFor="money">Money</label>
