@@ -25,7 +25,6 @@ const AddExpense = () => {
           handleSubmit(
             e,
             expenseType.current.value,
-            expenseType.current.options[expenseType.current.selectedIndex].text,
             expenseName.current.value,
             money,
             data

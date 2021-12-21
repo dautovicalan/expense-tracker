@@ -2,16 +2,15 @@
   "data": [
     {
       "id": 0,
-      "type": "income",
-      "value": 0,
+      "type": "Income",
       "details": [
         {
           "name": "income",
-          "value": 24.34
+          "value": 214.34
         },
         {
           "name": "test2",
-          "value": 24.34
+          "value": 224.34
         },
         {
           "name": "final test",
@@ -22,45 +21,58 @@
     {
       "id": 1,
       "type": "Food",
-      "value": 24.34,
       "details": [
         {
           "name": "test",
-          "value": 24.34
+          "value": 124.34
         },
         {
           "name": "test2",
-          "value": 24.34
+          "value": 124.34
+        },
+        {
+          "name": "test iz ekstenzije",
+          "value": 112
+        },
+        {
+          "name": "bok ja sam food",
+          "value": 12
+        },
+        {
+          "name": "shdajka",
+          "value": 8
+        },
+        {
+          "name": "ahsdkjashdk",
+          "value": 1.11
         }
       ]
     },
     {
       "id": 2,
       "type": "Going Out",
-      "value": 24.22,
       "details": [
         {
           "name": "goingout",
-          "value": 24.34
+          "value": 924.34
         },
         {
           "name": "test2",
-          "value": 24.34
+          "value": 924.34
         }
       ]
     },
     {
       "id": 3,
       "type": "Other",
-      "value": 24.22,
       "details": [
         {
           "name": "other",
-          "value": 24.34
+          "value": 824.34
         },
         {
           "name": "test2",
-          "value": 24.34
+          "value": 824.34
         }
       ]
     }

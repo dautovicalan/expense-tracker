@@ -3,7 +3,6 @@ import updateData from "../Hooks/updateData";
  export const handleSubmit = (
     e,
     expenseId,
-    expenseType,
     expenseName,
     expanseMoney,
     data

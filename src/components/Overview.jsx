@@ -13,8 +13,8 @@ const Overview = () => {
           <React.Fragment key={element.id}>
             <TextBox
               name={element.type}
-              value={element.value}
               id={element.id}
+              details={element.details}
             />
           </React.Fragment>
         );
