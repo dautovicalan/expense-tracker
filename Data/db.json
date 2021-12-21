@@ -9,19 +9,28 @@
       "id": 2,
       "type": "food",
       "value": 24.34,
-      "details": []
+      "details": [
+        {"name": "test", "value": 24.34},
+        {"name": "test2", "value": 24.34}
+      ]
     },
     {
       "id": 3,
       "type": "going-out",
       "value": 24.22,
-      "details": []
+      "details": [
+        {"name": "goingout", "value": 24.34},
+        {"name": "test2", "value": 24.34}
+      ]
     },
     {
       "id": 4,
       "type": "other",
       "value": 24.22,
-      "details": []
+      "details": [
+        {"name": "other", "value": 24.34},
+        {"name": "test2", "value": 24.34}
+      ]
     }
   ]
 }

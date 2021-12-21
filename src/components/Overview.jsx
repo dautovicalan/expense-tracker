@@ -4,26 +4,25 @@ import { useNavigate } from "react-router-dom";
 import TextBox from "./TextBox";
 import { useContext } from "react";
 import { DataContext } from "../Context/DataContext";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const Overview = () => {
   const { data } = useContext(DataContext);
   // TODO Look for outlet solution for nested routing
   return (
-    <React.Fragment>
-      <h2>Overview for December</h2>
       <div className={styles.overview_container}>
         {data.map((element) => {
           return (
-            <TextBox
-              name={element.type}
-              value={element.value}
-              key={element.id}
-            />
+            <React.Fragment key={element.id}>
+              <TextBox
+                name={element.type}
+                value={element.value}
+                id={element.id}
+              />
+            </React.Fragment>
           );
         })}
       </div>
-    </React.Fragment>
   );
 };
 
