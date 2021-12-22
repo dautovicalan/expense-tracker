@@ -21,13 +21,7 @@
     {
       "id": 1,
       "type": "Food",
-      "details": [
-        {
-          "name": "test za finale 2",
-          "value": 12,
-          "id": 2
-        }
-      ]
+      "details": []
     },
     {
       "id": 2,
