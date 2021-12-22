@@ -21,7 +21,24 @@
     {
       "id": 1,
       "type": "Food",
-      "details": []
+      "details": [
+        {
+          "name": "test",
+          "value": 12
+        },
+        {
+          "name": "test",
+          "value": 11
+        },
+        {
+          "name": "test",
+          "value": 110
+        },
+        {
+          "name": "test",
+          "value": 1100
+        }
+      ]
     },
     {
       "id": 2,

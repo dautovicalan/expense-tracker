@@ -9,6 +9,8 @@ export const handleRemove = (providedArray, id, data, typeId, setData) => {
     const filteredArray = state.filter(element => element.id !== id+1);
     setState(filteredArray);
     updateData(typeId, {...data, details: filteredArray});
+
+    // TODO Solve with useReducer
     setData(currentData => {
         currentData[typeId] = {...data, details: filteredArray};
         return currentData;
