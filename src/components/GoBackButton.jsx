@@ -8,7 +8,7 @@ const GoBackButton = () => {
     <React.Fragment>
       <button
         onClick={() => navigate("/")}
-        className={styles["go-back-button"]}
+        className={styles["button-34"]}
       >
         GO BACK TO MAIN
       </button>

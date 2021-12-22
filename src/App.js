@@ -15,8 +15,6 @@ function App() {
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
-  console.log(dataValue.data);
-
   return (
     <div className="App">
       <Router>
