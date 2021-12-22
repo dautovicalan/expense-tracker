@@ -12,25 +12,25 @@ const DynamicPage = () => {
   const { data, isLoading } = useFetch(`data/${id}`);
   const { id: typeId, type, details } = data;
   const [state, setState] = useState(details);
-  const providedArray = useMemo(() => ({state, setState}), [state, setState]);
+  const providedArray = useMemo(() => ({ state, setState }), [state, setState]);
 
   useEffect(() => {
-    setState(details)
-  }, [details])
+    setState(details);
+  }, [details]);
 
   return (
     <div className={styles.details_container}>
       <h2>{type}</h2>
       <GoBackButton />
       {!isLoading &&
-        state.map((elemet) => {
+        state.map((elemet, index) => {
           return (
-            <div key={elemet.id} className={styles.item_textbox}>
+            <div key={index} className={styles.item_textbox}>
               <h3>{elemet.name}</h3>
               <h3>{elemet.value.toFixed(2)}</h3>
               <button
                 className={buttonStyle["button-34"]}
-                onClick={() => handleRemove(providedArray, elemet.id, data)}
+                onClick={() => handleRemove(providedArray, index, data)}
               >
                 REMOVE
               </button>

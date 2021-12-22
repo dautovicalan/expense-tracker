@@ -21,30 +21,17 @@
     {
       "id": 1,
       "type": "Food",
-      "details": [
-        {
-          "id": 1,
-          "name": "test2",
-          "value": 124.34
-        },
-        {
-          "id": 2,
-          "name": "test iz ekstenzije",
-          "value": 112
-        }
-      ]
+      "details": []
     },
     {
       "id": 2,
       "type": "Going Out",
       "details": [
         {
-          "id": 1,
           "name": "test2",
           "value": 124.34
         },
         {
-          "id": 2,
           "name": "test iz ekstenzije",
           "value": 112
         }
@@ -55,12 +42,10 @@
       "type": "Other",
       "details": [
         {
-          "id": 1,
           "name": "test2",
           "value": 124.34
         },
         {
-          "id": 2,
           "name": "test iz ekstenzije",
           "value": 112
         }
