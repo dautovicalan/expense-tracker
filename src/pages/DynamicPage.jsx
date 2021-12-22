@@ -6,9 +6,12 @@ import styles from "../styles/Details.module.css";
 import buttonStyle from "../styles/button.module.css";
 import { handleRemove } from "../functions/handleRemove";
 import { useState, useEffect, useMemo } from "react";
+import { DataContext } from "../Context/DataContext";
+import { useContext } from "react";
 
 const DynamicPage = () => {
   const { id } = useParams();
+  const { setData } = useContext(DataContext);
   const { data, isLoading } = useFetch(`data/${id}`);
   const { id: typeId, type, details } = data;
   const [state, setState] = useState(details);
@@ -30,7 +33,7 @@ const DynamicPage = () => {
               <h3>{elemet.value.toFixed(2)}</h3>
               <button
                 className={buttonStyle["button-34"]}
-                onClick={() => handleRemove(providedArray, index, data)}
+                onClick={() => handleRemove(providedArray, index, data, typeId, setData)}
               >
                 REMOVE
               </button>

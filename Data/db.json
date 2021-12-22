@@ -21,35 +21,23 @@
     {
       "id": 1,
       "type": "Food",
-      "details": []
+      "details": [
+        {
+          "name": "test za finale 2",
+          "value": 12,
+          "id": 2
+        }
+      ]
     },
     {
       "id": 2,
       "type": "Going Out",
-      "details": [
-        {
-          "name": "test2",
-          "value": 124.34
-        },
-        {
-          "name": "test iz ekstenzije",
-          "value": 112
-        }
-      ]
+      "details": []
     },
     {
       "id": 3,
       "type": "Other",
-      "details": [
-        {
-          "name": "test2",
-          "value": 124.34
-        },
-        {
-          "name": "test iz ekstenzije",
-          "value": 112
-        }
-      ]
+      "details": []
     }
   ]
 }
