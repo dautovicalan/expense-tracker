@@ -23,68 +23,14 @@
       "type": "Food",
       "details": [
         {
-          "name": "test",
-          "value": 124.34
-        },
-        {
+          "id": 1,
           "name": "test2",
           "value": 124.34
         },
         {
+          "id": 2,
           "name": "test iz ekstenzije",
           "value": 112
-        },
-        {
-          "name": "bok ja sam food",
-          "value": 12
-        },
-        {
-          "name": "shdajka",
-          "value": 8
-        },
-        {
-          "name": "ahsdkjashdk",
-          "value": 1.11
-        },
-        {
-          "name": "dsadasd",
-          "value": 1.2
-        },
-        {
-          "name": "sasasa",
-          "value": 1.11
-        },
-        {
-          "name": "ja sam novi expense u foodu",
-          "value": 12
-        },
-        {
-          "name": "my income",
-          "value": 12.99
-        },
-        {
-          "name": "asas",
-          "value": 120
-        },
-        {
-          "name": "asas",
-          "value": 120
-        },
-        {
-          "name": "asas",
-          "value": 120
-        },
-        {
-          "name": "asas",
-          "value": 120
-        },
-        {
-          "name": "asas",
-          "value": 120
-        },
-        {
-          "name": "final test for food",
-          "value": 120
         }
       ]
     },
@@ -93,12 +39,14 @@
       "type": "Going Out",
       "details": [
         {
-          "name": "goingout",
-          "value": 924.34
+          "id": 1,
+          "name": "test2",
+          "value": 124.34
         },
         {
-          "name": "test2",
-          "value": 924.34
+          "id": 2,
+          "name": "test iz ekstenzije",
+          "value": 112
         }
       ]
     },
@@ -107,20 +55,14 @@
       "type": "Other",
       "details": [
         {
-          "name": "other",
-          "value": 824.34
-        },
-        {
+          "id": 1,
           "name": "test2",
-          "value": 824.34
+          "value": 124.34
         },
         {
-          "name": "djakshdjkasd",
-          "value": 12
-        },
-        {
-          "name": "marosini test",
-          "value": 120
+          "id": 2,
+          "name": "test iz ekstenzije",
+          "value": 112
         }
       ]
     }
