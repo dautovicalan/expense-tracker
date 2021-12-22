@@ -11,7 +11,7 @@ const AddExpense = () => {
   const expenseType = useRef();
   const [money, setMoney] = useState(0);
 
-  const { data } = useContext(DataContext);
+  const { data, setData } = useContext(DataContext);
 
   const handleChange = (e) => {
     setMoney(e.target.value);
@@ -27,7 +27,8 @@ const AddExpense = () => {
             expenseType.current.value,
             expenseName.current.value,
             money,
-            data
+            data,
+            setData
           )
         }
         className={styles.form_container}
