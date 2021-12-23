@@ -47,8 +47,22 @@ const DynamicPage = () => {
     <div className={styles.details_container}>
       <h2>{type}</h2>
       <GoBackButton />
-      <button onClick={clickHandlerDesc}>Sort Desc</button>
-      <button onClick={clickHandlerAsc}>Sort Asc</button>
+      {!isLoading && state.length !== 0 && (
+        <React.Fragment>
+          <button
+            onClick={clickHandlerDesc}
+            className={buttonStyle["button-34"]}
+          >
+            Sort Price Desc
+          </button>
+          <button
+            onClick={clickHandlerAsc}
+            className={buttonStyle["button-34"]}
+          >
+            Sort Price Asc
+          </button>
+        </React.Fragment>
+      )}
       {!isLoading &&
         state.map((element, index) => {
           return (

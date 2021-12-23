@@ -23,35 +23,30 @@
       "type": "Food",
       "details": [
         {
-          "name": "test",
-          "value": 11,
-          "id": 2
-        },
-        {
-          "name": "test",
-          "value": 110,
-          "id": 3
-        },
-        {
-          "name": "test",
-          "value": 1100,
-          "id": 4
-        },
-        {
-          "name": "add food",
-          "value": 9.99
+          "name": "hellou",
+          "value": 12
         }
       ]
     },
     {
       "id": 2,
       "type": "Going Out",
-      "details": []
+      "details": [
+        {
+          "name": "hellou",
+          "value": 12
+        }
+      ]
     },
     {
       "id": 3,
       "type": "Other",
-      "details": []
+      "details": [
+        {
+          "name": "hellou",
+          "value": 12
+        }
+      ]
     }
   ]
 }
