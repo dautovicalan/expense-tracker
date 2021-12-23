@@ -24,19 +24,22 @@
       "details": [
         {
           "name": "test",
-          "value": 12
+          "value": 11,
+          "id": 2
         },
         {
           "name": "test",
-          "value": 11
+          "value": 110,
+          "id": 3
         },
         {
           "name": "test",
-          "value": 110
+          "value": 1100,
+          "id": 4
         },
         {
-          "name": "test",
-          "value": 1100
+          "name": "add food",
+          "value": 9.99
         }
       ]
     },
