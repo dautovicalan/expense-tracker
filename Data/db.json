@@ -21,12 +21,7 @@
     {
       "id": 1,
       "type": "Food",
-      "details": [
-        {
-          "name": "hellou",
-          "value": 12
-        }
-      ]
+      "details": []
     },
     {
       "id": 2,

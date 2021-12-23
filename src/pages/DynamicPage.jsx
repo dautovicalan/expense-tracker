@@ -47,7 +47,7 @@ const DynamicPage = () => {
     <div className={styles.details_container}>
       <h2>{type}</h2>
       <GoBackButton />
-      {!isLoading && state.length !== 0 && (
+      {!isLoading && state.length > 1 && (
         <React.Fragment>
           <button
             onClick={clickHandlerDesc}
@@ -63,7 +63,7 @@ const DynamicPage = () => {
           </button>
         </React.Fragment>
       )}
-      {!isLoading &&
+      {!isLoading && state.length !== 0 ? (
         state.map((element, index) => {
           return (
             <div key={index} className={styles.item_textbox}>
@@ -79,7 +79,10 @@ const DynamicPage = () => {
               </button>
             </div>
           );
-        })}
+        })
+      ) : (
+        <p>No items in this section</p>
+      )}
     </div>
   );
 };
