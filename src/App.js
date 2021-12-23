@@ -5,7 +5,12 @@ import useFetch from './Hooks/useFetch';
 import { useState, useEffect, useMemo } from "react";
 import { DataContext } from './Context/DataContext';
 import DynamicPage from './pages/DynamicPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login';
 
+const getUser = () => {
+  return JSON.parse((localStorage.getItem("currentUser")));
+}
 
 function App() {
   
@@ -15,16 +20,20 @@ function App() {
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
+  const test = getUser();
+  console.log(test);
+
   return (
     <div className="App">
-      <Router>
+      <Login />
+      {/* <Router>
       <DataContext.Provider value={dataValue}>
         <Routes>
             <Route path="/" element={!isLoading && <MainPage />}/>
             <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
         </Routes>
       </DataContext.Provider>
-      </Router>
+      </Router> */}
     </div>
   );
 }
