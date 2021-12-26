@@ -10,7 +10,7 @@ const MainPage = () => {
 
   return (
     <React.Fragment>
-      <div>
+      {isLoggedIn && <div>
         <h1>Hello {isLoggedIn.email}</h1>
         <button
           onClick={() => {
@@ -20,7 +20,7 @@ const MainPage = () => {
         >
           Loggout
         </button>
-      </div>
+      </div>}
       <Overview />
       {/*<ExpenseChart />*/}
       <AddExpense />

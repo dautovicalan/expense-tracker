@@ -8,6 +8,12 @@ const Login = ({ setIsLoggedIn }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      email.current.value.trim().length === 0 &&
+      pass.current.value.trim().length === 0
+    ) {
+      return;
+    }
     localStorage.setItem(
       "currentUser",
       JSON.stringify({
@@ -19,7 +25,6 @@ const Login = ({ setIsLoggedIn }) => {
       email: email.current.value,
       pass: pass.current.value,
     });
-    console.log(email.current.value, pass.current.value);
   };
 
   return (

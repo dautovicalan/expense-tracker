@@ -21,7 +21,16 @@
     {
       "id": 1,
       "type": "Food",
-      "details": []
+      "details": [
+        {
+          "name": "bokic marosini",
+          "value": 129
+        },
+        {
+          "name": "bokic drugiii marosini",
+          "value": 999.99
+        }
+      ]
     },
     {
       "id": 2,

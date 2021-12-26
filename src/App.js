@@ -17,16 +17,19 @@ function App() {
   const {data: fetchedData, isLoading} = useFetch('data');
   const[data, setData] = useState(fetchedData);
   const[isLoggedIn, setIsLoggedIn] = useState(getUser);
-  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn}),[data, setData]);
+  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn}),[data, setData, isLoggedIn, setIsLoggedIn]);
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
   console.log(isLoggedIn);
+  if(isLoggedIn === null){
+    return <Login setIsLoggedIn={setIsLoggedIn}/>
+  }
 
+  console.log(<Login/>)
 
   return (
     <div className="App">
-      {!isLoggedIn && <Login setIsLoggedIn={setIsLoggedIn}/>}
       {isLoggedIn && (<Router>
       <DataContext.Provider value={dataValue}>
         <Routes>
