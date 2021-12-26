@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { useRef } from "react";
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const email = useRef();
   const pass = useRef();
 
@@ -15,6 +15,10 @@ const Login = () => {
         pass: pass.current.value,
       })
     );
+    setIsLoggedIn({
+      email: email.current.value,
+      pass: pass.current.value,
+    });
     console.log(email.current.value, pass.current.value);
   };
 

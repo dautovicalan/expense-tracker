@@ -16,24 +16,25 @@ function App() {
   
   const {data: fetchedData, isLoading} = useFetch('data');
   const[data, setData] = useState(fetchedData);
-  const dataValue = useMemo(() => ({data, setData}),[data, setData]);
+  const[isLoggedIn, setIsLoggedIn] = useState(getUser);
+  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn}),[data, setData]);
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
-  const test = getUser();
-  console.log(test);
+  console.log(isLoggedIn);
+
 
   return (
     <div className="App">
-      <Login />
-      {/* <Router>
+      {!isLoggedIn && <Login setIsLoggedIn={setIsLoggedIn}/>}
+      {isLoggedIn && (<Router>
       <DataContext.Provider value={dataValue}>
         <Routes>
             <Route path="/" element={!isLoading && <MainPage />}/>
             <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
         </Routes>
       </DataContext.Provider>
-      </Router> */}
+      </Router>)}
     </div>
   );
 }
