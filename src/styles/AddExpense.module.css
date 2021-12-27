@@ -31,34 +31,28 @@
 
 /* CSS */
 .button-19 {
-  appearance: button;
-  background-color: #0b0c10;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
   box-sizing: border-box;
-  color: #66fcf1;
+  color: #ffffff;
   cursor: pointer;
-  display: inline-block;
-  font-family: din-round, sans-serif;
-  font-size: 15px;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
   user-select: none;
   -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 100%;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
 }
 
 .button-19:after {

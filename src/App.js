@@ -26,8 +26,6 @@ function App() {
     return <Login setIsLoggedIn={setIsLoggedIn}/>
   }
 
-  console.log(<Login/>)
-
   return (
     <div className="App">
       {isLoggedIn && (<Router>

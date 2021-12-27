@@ -3,20 +3,7 @@
     {
       "id": 0,
       "type": "Income",
-      "details": [
-        {
-          "name": "income",
-          "value": 214.34
-        },
-        {
-          "name": "test2",
-          "value": 224.34
-        },
-        {
-          "name": "final test",
-          "value": 121.21
-        }
-      ]
+      "details": []
     },
     {
       "id": 1,
@@ -49,6 +36,10 @@
         {
           "name": "hellou",
           "value": 12
+        },
+        {
+          "name": "Dejan Geschenk",
+          "value": 120
         }
       ]
     }
