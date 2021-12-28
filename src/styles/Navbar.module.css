@@ -19,3 +19,7 @@
   text-decoration: underline;
   color: rgb(223, 96, 23);
 }
+
+.navbar h3 span:hover {
+  cursor: pointer;
+}

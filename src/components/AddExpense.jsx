@@ -5,6 +5,7 @@ import updateData from "../Hooks/updateData";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 import { handleSubmit } from "../functions/handleSubmit";
+import SingleInput from "./SingleInput";
 
 const AddExpense = () => {
   const expenseName = useRef();
@@ -50,9 +51,15 @@ const AddExpense = () => {
           ref={expenseType}
           required
         >
-          <option value="1">Food</option>
-          <option value="2">Going Out</option>
-          <option value="3">Other</option>
+          {data.map((element) => {
+            return (
+              <SingleInput
+                id={element.id}
+                name={element.type}
+                key={element.id}
+              />
+            );
+          })}
         </select>
 
         <label htmlFor="money">Money</label>

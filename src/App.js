@@ -7,6 +7,9 @@ import { DataContext } from './Context/DataContext';
 import DynamicPage from './pages/DynamicPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
+import Navinjo from "./components/Navinjo";
+import AddNewSectionPage from './pages/AddNewSectionPage';
+
 
 const getUser = () => {
   return JSON.parse((localStorage.getItem("currentUser")));
@@ -21,7 +24,6 @@ function App() {
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
-  console.log(isLoggedIn);
   if(isLoggedIn === null){
     return <Login setIsLoggedIn={setIsLoggedIn}/>
   }
@@ -30,9 +32,11 @@ function App() {
     <div className="App">
       {isLoggedIn && (<Router>
       <DataContext.Provider value={dataValue}>
+        <Navinjo isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
             <Route path="/" element={!isLoading && <MainPage />}/>
             <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
+            <Route path="/add-new-section" element={<AddNewSectionPage/>}/>
         </Routes>
       </DataContext.Provider>
       </Router>)}

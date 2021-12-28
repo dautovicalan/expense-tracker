@@ -68,7 +68,7 @@ const DynamicPage = () => {
           return (
             <div key={index} className={styles.item_textbox}>
               <h3>{element.name}</h3>
-              <h3>{element.value.toFixed(2)}</h3>
+              <h3>{element.value.toFixed(2)} kn</h3>
               <button
                 className={buttonStyle["button-34"]}
                 onClick={() =>

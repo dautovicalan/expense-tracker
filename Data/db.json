@@ -16,6 +16,10 @@
         {
           "name": "bokic drugiii marosini",
           "value": 999.99
+        },
+        {
+          "name": "saasa",
+          "value": 120
         }
       ]
     },
@@ -26,6 +30,10 @@
         {
           "name": "hellou",
           "value": 12
+        },
+        {
+          "name": "saasa",
+          "value": 120
         }
       ]
     },
@@ -40,8 +48,39 @@
         {
           "name": "Dejan Geschenk",
           "value": 120
+        },
+        {
+          "name": "saasa",
+          "value": 120
         }
       ]
+    },
+    {
+      "type": "Izlazak",
+      "details": [
+        {
+          "name": "hellooo",
+          "value": 12
+        },
+        {
+          "name": "hellooo",
+          "value": 12
+        },
+        {
+          "name": "hellooo",
+          "value": 12
+        },
+        {
+          "name": "asdasd",
+          "value": 12
+        }
+      ],
+      "id": 4
+    },
+    {
+      "type": "Test",
+      "details": [],
+      "id": 5
     }
   ]
 }
