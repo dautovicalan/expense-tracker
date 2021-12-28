@@ -3,10 +3,12 @@ import { Form, Button } from "react-bootstrap";
 import postData from "../Hooks/postData";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddNewSectionPage = () => {
   const sectionName = useRef();
   const { setData } = useContext(DataContext);
+  const navigator = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const newSection = postData({
@@ -15,6 +17,7 @@ const AddNewSectionPage = () => {
     })
       .then((data) => setData((prevValue) => [...prevValue, data]))
       .catch((err) => console.log(err.message));
+    navigator("/");
   };
 
   return (

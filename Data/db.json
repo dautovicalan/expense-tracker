@@ -81,6 +81,21 @@
       "type": "jebate led",
       "details": [],
       "id": 5
+    },
+    {
+      "type": "Maroisni Duznost",
+      "details": [],
+      "id": 6
+    },
+    {
+      "type": "marosini je glup",
+      "details": [
+        {
+          "name": "laganeze",
+          "value": 12
+        }
+      ],
+      "id": 7
     }
   ]
 }
