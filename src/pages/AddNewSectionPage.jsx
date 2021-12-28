@@ -9,9 +9,12 @@ const AddNewSectionPage = () => {
   const { setData } = useContext(DataContext);
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newSection = { type: sectionName.current.value, details: [] };
-    postData(newSection);
-    setData((prevValue) => [...prevValue, newSection]);
+    const newSection = postData({
+      type: sectionName.current.value,
+      details: [],
+    })
+      .then((data) => setData((prevValue) => [...prevValue, data]))
+      .catch((err) => console.log(err.message));
   };
 
   return (

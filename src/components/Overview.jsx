@@ -6,6 +6,7 @@ import { DataContext } from "../Context/DataContext";
 
 const Overview = () => {
   const { data } = useContext(DataContext);
+  console.log(data);
   return (
     <div className={styles.overview_container}>
       {data.map((element) => {
