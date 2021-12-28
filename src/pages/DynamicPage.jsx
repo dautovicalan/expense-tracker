@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import GoBackButton from "../components/GoBackButton";
 import useFetch from "../Hooks/useFetch";
 import styles from "../styles/Details.module.css";
@@ -8,6 +8,7 @@ import { handleRemove } from "../functions/handleRemove";
 import { useState, useEffect, useMemo } from "react";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
+import deleteData from "../Hooks/deleteData";
 
 const DynamicPage = () => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const DynamicPage = () => {
   const { id: typeId, type, details } = data;
   const [state, setState] = useState(details);
   const providedArray = useMemo(() => ({ state, setState }), [state, setState]);
+  const navigator = useNavigate();
 
   const [isSortedDesc, setisSortedDesc] = useState(false);
   const [isSortedAsc, setisSortedAsc] = useState(false);
@@ -83,6 +85,15 @@ const DynamicPage = () => {
       ) : (
         <p>No items in this section</p>
       )}
+      <button
+        className={buttonStyle["button-34"]}
+        onClick={() => {
+          deleteData(id, setData);
+          navigator("/");
+        }}
+      >
+        Delete this section
+      </button>
     </div>
   );
 };

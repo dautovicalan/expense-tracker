@@ -1,10 +1,5 @@
-const hello = [
-    {name: "alan"},
-    {name: "alan"},
-    {name: "alan"},
-    {name: "alan"}
-];
+const arr = [{name:"marosini", id: 1},
+{name:"peder", id: 2},
+{name:"guz", id: 3}];
 
-console.log(hello.map((element, index) => {
-    element.id = index + 1;
-}))
+console.log(arr.filter(element => element.id !== 1));
