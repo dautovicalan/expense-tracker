@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Overview.module.css";
 
@@ -11,8 +11,8 @@ const TextBox = ({ name, id, details }) => {
   return (
     <React.Fragment>
       <div
-        onClick={() => navigate(`/info/${id}`)}
         className={`${styles.accounts_textbox} ${styles[name + "_textbox"]}`}
+        onClick={() => navigate(`/info/${id}`)}
       >
         <h3 style={{ textDecoration: "underline", textTransform: "uppercase" }}>
           {name}
