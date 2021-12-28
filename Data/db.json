@@ -59,28 +59,15 @@
       "type": "Izlazak",
       "details": [
         {
-          "name": "hellooo",
-          "value": 12
+          "name": "napokon",
+          "value": 10
         },
         {
-          "name": "hellooo",
-          "value": 12
-        },
-        {
-          "name": "hellooo",
-          "value": 12
-        },
-        {
-          "name": "asdasd",
+          "name": "napokon",
           "value": 12
         }
       ],
       "id": 4
-    },
-    {
-      "type": "jebate led",
-      "details": [],
-      "id": 5
     }
   ]
 }
