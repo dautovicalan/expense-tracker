@@ -1,6 +1,4 @@
 import React from "react";
-import { DataContext } from "../Context/DataContext";
-import { useContext } from "react";
 import styles from "../styles/Navbar.module.css";
 import buttonStyles from "../styles/button.module.css";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +21,12 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
             onClick={() => navigator("/add-new-section")}
           >
             Add new section
+          </button>
+          <button
+            className={buttonStyles["button-34"]}
+            onClick={() => navigator("/chart")}
+          >
+            Show Chart View
           </button>
           <button
             onClick={() => {

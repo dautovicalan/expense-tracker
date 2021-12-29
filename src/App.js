@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login';
 import Navinjo from "./components/Navinjo";
 import AddNewSectionPage from './pages/AddNewSectionPage';
-
+import ChartPage from './pages/ChartPage';
 
 const getUser = () => {
   return JSON.parse((localStorage.getItem("currentUser")));
@@ -37,6 +37,7 @@ function App() {
             <Route path="/" element={!isLoading && <MainPage />}/>
             <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
             <Route path="/add-new-section" element={<AddNewSectionPage/>}/>
+            <Route path="/chart" element={<ChartPage/>}/>
         </Routes>
       </DataContext.Provider>
       </Router>)}

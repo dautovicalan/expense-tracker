@@ -26,16 +26,7 @@
     {
       "id": 2,
       "type": "Going Out",
-      "details": [
-        {
-          "name": "hellou",
-          "value": 12
-        },
-        {
-          "name": "saasa",
-          "value": 120
-        }
-      ]
+      "details": []
     },
     {
       "id": 3,
