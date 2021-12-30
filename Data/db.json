@@ -11,15 +11,13 @@
       "details": [
         {
           "name": "bokic marosini",
-          "value": 129
+          "value": 129,
+          "id": 2
         },
         {
           "name": "bokic drugiii marosini",
-          "value": 999.99
-        },
-        {
-          "name": "saasa",
-          "value": 120
+          "value": 999.99,
+          "id": 3
         }
       ]
     },
