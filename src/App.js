@@ -11,6 +11,7 @@ import Navinjo from "./components/Navinjo";
 import AddNewSectionPage from './pages/AddNewSectionPage';
 import ChartPage from './pages/ChartPage';
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom';
+import ShowMoneyStatusPage from './pages/ShowMoneyStatusPage';
 
 const getUser = () => {
   return JSON.parse((localStorage.getItem("currentUser")));
@@ -40,6 +41,7 @@ function App() {
             <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
             <Route path="/add-new-section" element={<AddNewSectionPage/>}/>
             <Route path="/chart" element={<ChartPage/>}/>
+            <Route path="/money-status" element={<ShowMoneyStatusPage/>}/>
         </Routes>
       </DataContext.Provider>
       </Router>)}

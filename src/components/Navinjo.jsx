@@ -31,6 +31,12 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
             Show Chart View
           </button>
           <button
+            className={buttonStyles["button-34"]}
+            onClick={() => navigator("/money-status")}
+          >
+            Money Status
+          </button>
+          <button
             onClick={() => {
               setCurrentCurrency((prevValue) => {
                 return prevValue === "KN" ? "EUR" : "KN";

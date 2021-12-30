@@ -27,6 +27,14 @@
         {
           "name": "Malicka",
           "value": 1000
+        },
+        {
+          "name": "sasa",
+          "value": 12
+        },
+        {
+          "name": "sasa",
+          "value": 12
         }
       ]
     },
@@ -39,33 +47,6 @@
           "value": 500
         }
       ]
-    },
-    {
-      "type": "Taxi",
-      "details": [
-        {
-          "name": "Vozac 1",
-          "value": 10
-        },
-        {
-          "name": "Vozac 1",
-          "value": 100.05
-        },
-        {
-          "name": "Vozac 1",
-          "value": 110.55
-        },
-        {
-          "name": "Vozac 1",
-          "value": 1105.51
-        }
-      ],
-      "id": 4
-    },
-    {
-      "type": "hahha",
-      "details": [],
-      "id": 5
     }
   ]
 }
