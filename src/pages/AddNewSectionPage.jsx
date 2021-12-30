@@ -11,7 +11,7 @@ const AddNewSectionPage = () => {
   const navigator = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newSection = postData({
+    postData({
       type: sectionName.current.value,
       details: [],
     })
