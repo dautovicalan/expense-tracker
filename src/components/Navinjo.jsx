@@ -2,9 +2,11 @@ import React from "react";
 import styles from "../styles/Navbar.module.css";
 import buttonStyles from "../styles/button.module.css";
 import { useNavigate } from "react-router-dom";
-
+import { DataContext } from "../Context/DataContext";
+import { useContext } from "react";
 const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigator = useNavigate();
+  const { setCurrentCurrency } = useContext(DataContext);
 
   return (
     <React.Fragment>
@@ -27,6 +29,16 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
             onClick={() => navigator("/chart")}
           >
             Show Chart View
+          </button>
+          <button
+            onClick={() => {
+              setCurrentCurrency((prevValue) => {
+                return prevValue === "KN" ? "EUR" : "KN";
+              });
+            }}
+            className={buttonStyles["button-34"]}
+          >
+            Change Currency
           </button>
           <button
             onClick={() => {

@@ -20,7 +20,8 @@ function App() {
   const {data: fetchedData, isLoading} = useFetch('data');
   const[data, setData] = useState(fetchedData);
   const[isLoggedIn, setIsLoggedIn] = useState(getUser);
-  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn}),[data, setData, isLoggedIn, setIsLoggedIn]);
+  const[currentCurrency, setCurrentCurrency] = useState("KN")
+  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency}),[data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency]);
 
   useEffect(() => setData(fetchedData), [fetchedData]);
 
