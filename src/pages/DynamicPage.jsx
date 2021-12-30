@@ -13,6 +13,7 @@ import deleteData from "../Hooks/deleteData";
 const DynamicPage = () => {
   const { id } = useParams();
   const { setData } = useContext(DataContext);
+  const { currentCurrency } = useContext(DataContext);
   const { data, isLoading } = useFetch(`data/${id}`);
   const { id: typeId, type, details } = data;
   const [state, setState] = useState(details);
@@ -70,7 +71,14 @@ const DynamicPage = () => {
           return (
             <div key={index} className={styles.item_textbox}>
               <h3>{element.name}</h3>
-              <h3>{element.value.toFixed(2)} kn</h3>
+              <h3>
+                {currentCurrency === "KN"
+                  ? parseFloat(element.value.toFixed(2))
+                  : (parseFloat(element.value.toFixed(2)) / 7.5).toFixed(
+                      2
+                    )}{" "}
+                {currentCurrency}
+              </h3>
               <button
                 className={buttonStyle["button-34"]}
                 onClick={() =>

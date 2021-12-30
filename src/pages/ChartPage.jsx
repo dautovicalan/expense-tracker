@@ -20,52 +20,25 @@ const ChartPage = () => {
     return { title: element.type, value: value, color: "#" + randomColor };
   });
 
+  const labels = myData.map((element) => {
+    return element.title;
+  });
+
+  const datinjo = myData.map((element) => {
+    return element.value;
+  });
+
+  const colors = myData.map((element) => {
+    return element.color;
+  });
+
   const finalData = {
-    labels: [
-      myData.map((element) => {
-        return element.title;
-      }),
-    ],
+    labels: [...labels],
     datasets: [
       {
         label: "# of Money",
-        data: [
-          myData.map((element) => {
-            return element.value;
-          }),
-        ],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-  console.log(finalData);
-  const testData = {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-        ],
+        data: [...datinjo],
+        backgroundColor: [...colors],
         borderColor: [
           "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
@@ -78,11 +51,9 @@ const ChartPage = () => {
     ],
   };
 
-  // ! https://github.com/reactchartjs/react-chartjs-2 PLEASE SOLVE THIS WITH CHART JS
   return (
-    <div style={{ width: "20%", margin: "auto" }}>
+    <div style={{ width: "40%", margin: "auto", textAlign: "center" }}>
       <GoBackButton />
-      <p>Hello</p>
       <Pie data={finalData} />
     </div>
   );

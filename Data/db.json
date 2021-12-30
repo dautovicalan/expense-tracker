@@ -3,73 +3,61 @@
     {
       "id": 0,
       "type": "Income",
-      "details": []
+      "details": [
+        {
+          "name": "Placa",
+          "value": 6000
+        }
+      ]
     },
     {
       "id": 1,
       "type": "Food",
       "details": [
         {
-          "name": "bokic marosini",
-          "value": 129,
-          "id": 2
-        },
-        {
-          "name": "bokic drugiii marosini",
-          "value": 999.99,
-          "id": 3
+          "name": "Malicka",
+          "value": 200
         }
       ]
     },
     {
       "id": 2,
       "type": "Going Out",
-      "details": []
+      "details": [
+        {
+          "name": "Malicka",
+          "value": 1000
+        }
+      ]
     },
     {
       "id": 3,
       "type": "Other",
       "details": [
         {
-          "name": "hellou",
-          "value": 12
-        },
-        {
-          "name": "Dejan Geschenk",
-          "value": 120
-        },
-        {
-          "name": "saasa",
-          "value": 120
+          "name": "Roba",
+          "value": 500
         }
       ]
     },
     {
-      "type": "Izlazak",
+      "type": "Taxi",
       "details": [
         {
-          "name": "napokon",
+          "name": "Vozac 1",
           "value": 10
         },
         {
-          "name": "napokon",
-          "value": 12
+          "name": "Vozac 1",
+          "value": 100.05
         },
         {
-          "name": "askdjlad",
-          "value": 12
+          "name": "Vozac 1",
+          "value": 110.55
         },
         {
-          "name": "askdjlad",
-          "value": 12
-        },
-        {
-          "name": "askdjlad",
-          "value": 12
-        },
-        {
-          "name": "askdjlad",
-          "value": 12
+          "name": "Vozac 1",
+          "value": 1105.51
         }
       ],
       "id": 4

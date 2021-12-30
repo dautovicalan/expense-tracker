@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Navinjo from "./components/Navinjo";
 import AddNewSectionPage from './pages/AddNewSectionPage';
 import ChartPage from './pages/ChartPage';
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom';
 
 const getUser = () => {
   return JSON.parse((localStorage.getItem("currentUser")));
@@ -27,7 +28,7 @@ function App() {
 
   if(isLoggedIn === null){
     return <Login setIsLoggedIn={setIsLoggedIn}/>
-  }
+  } 
 
   return (
     <div className="App">
