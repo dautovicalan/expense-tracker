@@ -5,10 +5,8 @@ import Overview from "../components/Overview";
 const MainPage = () => {
   return (
     <React.Fragment>
-      <div style={{ backgroundColor: "rgb(15, 17, 16)" }}>
-        <Overview />
-        <AddExpense />
-      </div>
+      <Overview />
+      <AddExpense />
     </React.Fragment>
   );
 };

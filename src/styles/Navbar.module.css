@@ -7,6 +7,7 @@
   background-color: rgb(69, 156, 152);
   margin-bottom: 10px;
   font-family: "Bebas Neue", cursive;
+  border-bottom: 5px solid black;
 }
 
 .navbar h3 {
