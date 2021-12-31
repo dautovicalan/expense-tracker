@@ -1,6 +1,7 @@
 import React from "react";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
+import moneyStyle from "../styles/MoneyStatus.module.css";
 
 const reducer = (prevValue, currentValue) => {
   return prevValue + currentValue.value;
@@ -23,21 +24,36 @@ const ShowMoneyStatusPage = () => {
       <h2>
         You earned{" "}
         <span>
-          {finalIncomeValue} {currentCurrency}
+          {currentCurrency === "KN"
+            ? finalIncomeValue
+            : (finalIncomeValue / 7.5).toFixed(2)}{" "}
+          {currentCurrency}
         </span>{" "}
         this month
       </h2>
       <h2>
         You spent{" "}
         <span>
-          {finalCostValue} {currentCurrency}
+          {currentCurrency === "KN"
+            ? finalCostValue
+            : (finalCostValue / 7.5).toFixed(2)}{" "}
+          {currentCurrency}
         </span>{" "}
         this month
       </h2>
       <h2>
         Now your current money status eqauls{" "}
-        <span>
-          {finalIncomeValue - finalCostValue} {currentCurrency}
+        <span
+          className={
+            finalIncomeValue - finalCostValue >= 0
+              ? moneyStyle.positive
+              : moneyStyle.negative
+          }
+        >
+          {currentCurrency === "KN"
+            ? (finalIncomeValue - finalCostValue).toFixed(2)
+            : ((finalIncomeValue - finalCostValue) / 7.5).toFixed(2)}{" "}
+          {currentCurrency}
         </span>
       </h2>
     </div>

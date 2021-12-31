@@ -7,6 +7,18 @@
         {
           "name": "Placa",
           "value": 6000
+        },
+        {
+          "name": "sadasd",
+          "value": 12
+        },
+        {
+          "name": "sadasd",
+          "value": 12
+        },
+        {
+          "name": "sadasd",
+          "value": 12
         }
       ]
     },
@@ -45,6 +57,10 @@
         {
           "name": "Roba",
           "value": 500
+        },
+        {
+          "name": "handy",
+          "value": 7000
         }
       ]
     }

@@ -8,7 +8,6 @@ import { handleSubmit } from "../functions/handleSubmit";
 import SingleInput from "./SingleInput";
 
 const AddExpense = () => {
-
   // ! PLEASE DO NOT USE useRef HOOK FOR MENAGING VALUES THAT SHOULD BE CHANGED. INSTEAD USE useState WITH ONCHANGE EVENT
   const expenseName = useRef();
   const expenseType = useRef();
