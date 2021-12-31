@@ -20,43 +20,47 @@ const ShowMoneyStatusPage = () => {
   const finalCostValue = finaleee.reduce(reducer, 0).toFixed(2);
 
   return (
-    <div style={{ fontFamily: "Oswald, sans-serif" }}>
-      <h2>
-        You earned{" "}
-        <span>
-          {currentCurrency === "KN"
-            ? finalIncomeValue
-            : (finalIncomeValue / 7.5).toFixed(2)}{" "}
-          {currentCurrency}
-        </span>{" "}
-        this month
-      </h2>
-      <h2>
-        You spent{" "}
-        <span>
-          {currentCurrency === "KN"
-            ? finalCostValue
-            : (finalCostValue / 7.5).toFixed(2)}{" "}
-          {currentCurrency}
-        </span>{" "}
-        this month
-      </h2>
-      <h2>
-        Now your current money status eqauls{" "}
-        <span
-          className={
-            finalIncomeValue - finalCostValue >= 0
-              ? moneyStyle.positive
-              : moneyStyle.negative
-          }
-        >
-          {currentCurrency === "KN"
-            ? (finalIncomeValue - finalCostValue).toFixed(2)
-            : ((finalIncomeValue - finalCostValue) / 7.5).toFixed(2)}{" "}
-          {currentCurrency}
-        </span>
-      </h2>
-    </div>
+    <React.Fragment>
+      {data && (
+        <div style={{ fontFamily: "Oswald, sans-serif" }}>
+          <h2>
+            You earned{" "}
+            <span>
+              {currentCurrency === "KN"
+                ? finalIncomeValue
+                : (finalIncomeValue / 7.5).toFixed(2)}{" "}
+              {currentCurrency}
+            </span>{" "}
+            this month
+          </h2>
+          <h2>
+            You spent{" "}
+            <span>
+              {currentCurrency === "KN"
+                ? finalCostValue
+                : (finalCostValue / 7.5).toFixed(2)}{" "}
+              {currentCurrency}
+            </span>{" "}
+            this month
+          </h2>
+          <h2>
+            Now your current money status eqauls{" "}
+            <span
+              className={
+                finalIncomeValue - finalCostValue >= 0
+                  ? moneyStyle.positive
+                  : moneyStyle.negative
+              }
+            >
+              {currentCurrency === "KN"
+                ? (finalIncomeValue - finalCostValue).toFixed(2)
+                : ((finalIncomeValue - finalCostValue) / 7.5).toFixed(2)}{" "}
+              {currentCurrency}
+            </span>
+          </h2>
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 
