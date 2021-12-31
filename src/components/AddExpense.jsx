@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/AddExpense.module.css";
 import MoneyInput from "@rschpdr/react-money-input";
-import updateData from "../Hooks/updateData";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 import { handleSubmit } from "../functions/handleSubmit";
