@@ -4,7 +4,6 @@ import buttonStyles from "../styles/button.module.css";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
-import Avatar from "@mui/material/Avatar";
 
 const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
   const navigator = useNavigate();
@@ -48,6 +47,7 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
           >
             Change Currency
           </button>
+          <button className={buttonStyles["button-34"]}>Profile</button>
           <button
             onClick={() => {
               setIsLoggedIn(null);
