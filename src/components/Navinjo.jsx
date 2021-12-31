@@ -47,7 +47,12 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
           >
             Change Currency
           </button>
-          <button className={buttonStyles["button-34"]}>Profile</button>
+          <button
+            className={buttonStyles["button-34"]}
+            onClick={() => navigator("/profile")}
+          >
+            Profile
+          </button>
           <button
             onClick={() => {
               setIsLoggedIn(null);

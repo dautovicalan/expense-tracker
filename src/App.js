@@ -10,8 +10,8 @@ import Login from './components/Login';
 import Navinjo from "./components/Navinjo";
 import AddNewSectionPage from './pages/AddNewSectionPage';
 import ChartPage from './pages/ChartPage';
-import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react-dom';
 import ShowMoneyStatusPage from './pages/ShowMoneyStatusPage';
+import ProfilePage from './pages/ProfilePage';
 
 const getUser = () => {
   return JSON.parse((localStorage.getItem("currentUser")));
@@ -42,6 +42,7 @@ function App() {
             <Route path="/add-new-section" element={<AddNewSectionPage/>}/>
             <Route path="/chart" element={<ChartPage/>}/>
             <Route path="/money-status" element={<ShowMoneyStatusPage/>}/>
+            <Route path="/profile" element={<ProfilePage />}/>
         </Routes>
       </DataContext.Provider>
       </Router>)}
