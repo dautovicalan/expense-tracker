@@ -1,27 +1,68 @@
 {
   "data": [
     {
+      "id": 0,
+      "type": "Income",
+      "details": [
+        {
+          "name": "Placa",
+          "value": 6000
+        },
+        {
+          "name": "sadasd",
+          "value": 12
+        },
+        {
+          "name": "sadasd",
+          "value": 12
+        },
+        {
+          "name": "sadasd",
+          "value": 12
+        }
+      ]
+    },
+    {
       "id": 1,
-      "type": "income",
-      "value": 0
+      "type": "Food",
+      "details": [
+        {
+          "name": "Malicka",
+          "value": 200
+        }
+      ]
     },
     {
       "id": 2,
-      "type": "food",
-      "value": 24.34,
-      "details": []
+      "type": "Going Out",
+      "details": [
+        {
+          "name": "Malicka",
+          "value": 1000
+        },
+        {
+          "name": "sasa",
+          "value": 12
+        },
+        {
+          "name": "sasa",
+          "value": 12
+        }
+      ]
     },
     {
       "id": 3,
-      "type": "going-out",
-      "value": 24.22,
-      "details": []
-    },
-    {
-      "id": 4,
-      "type": "other",
-      "value": 24.22,
-      "details": []
+      "type": "Other",
+      "details": [
+        {
+          "name": "Roba",
+          "value": 500
+        },
+        {
+          "name": "handy",
+          "value": 7000
+        }
+      ]
     }
   ]
 }

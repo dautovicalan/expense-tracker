@@ -1,43 +1,51 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import MainPage from './pages/MainPage';
-import FoodPage from './pages/FoodPage';
 import useFetch from './Hooks/useFetch';
-import { useState, useEffect } from "react";
-import GoingOutPage from './pages/GoingOutPage';
-import OtherPage from './pages/OtherPage';
+import { useState, useEffect, useMemo } from "react";
+import { DataContext } from './Context/DataContext';
+import DynamicPage from './pages/DynamicPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login';
+import Navinjo from "./components/Navinjo";
+import AddNewSectionPage from './pages/AddNewSectionPage';
+import ChartPage from './pages/ChartPage';
+import ShowMoneyStatusPage from './pages/ShowMoneyStatusPage';
+import ProfilePage from './pages/ProfilePage';
 
+const getUser = () => {
+  return JSON.parse((localStorage.getItem("currentUser")));
+}
 
 function App() {
   
-  const fetchedData = useFetch();
-
+  const {data: fetchedData, isLoading} = useFetch('data');
   const[data, setData] = useState(fetchedData);
-  const [food, setFood] = useState(fetchedData[1]);
-  const[goingOut, setGoingOut] = useState(fetchedData[2]);
-  const[other, setOther] = useState(fetchedData[3]);
+  const[isLoggedIn, setIsLoggedIn] = useState(getUser);
+  const[currentCurrency, setCurrentCurrency] = useState("KN")
+  const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency}),[data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency]);
 
-  
+  useEffect(() => setData(fetchedData), [fetchedData]);
 
-
-  useEffect(() => {
-    setData(fetchedData);
-    setFood(fetchedData[1]);
-    setGoingOut(fetchedData[2]);
-    setOther(fetchedData[3]);
-  }, [fetchedData]);
+  if(isLoggedIn === null){
+    return <Login setIsLoggedIn={setIsLoggedIn}/>
+  } 
 
   return (
     <div className="App">
-      <Router>
+      {isLoggedIn && (<Router>
+      <DataContext.Provider value={dataValue}>
+        <Navinjo isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
         <Routes>
-          <Route path="/" element={data.length !== 0 && <MainPage data={data} />}/>
-          <Route path="income" element={<p>Bok ja sam income</p>}/>
-          <Route path="food" element={data.length !== 0 && <FoodPage data={food} setFood={setFood}/>}/>
-          <Route path="going-out" element={data.length !== 0 && <GoingOutPage data={goingOut} setGoingOut={setGoingOut}/>}/>
-          <Route path="other" element={data.length !== 0 && <OtherPage data={other} setOther={setOther}/>}/>
+            <Route path="/" element={!isLoading && <MainPage />}/>
+            <Route path="/info/:id" element={!isLoading && <DynamicPage/>}/>
+            <Route path="/add-new-section" element={<AddNewSectionPage/>}/>
+            <Route path="/chart" element={<ChartPage/>}/>
+            <Route path="/money-status" element={<ShowMoneyStatusPage/>}/>
+            <Route path="/profile" element={<ProfilePage />}/>
         </Routes>
-      </Router>
+      </DataContext.Provider>
+      </Router>)}
     </div>
   );
 }

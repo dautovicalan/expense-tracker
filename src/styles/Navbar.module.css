@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(69, 156, 152);
+  margin-bottom: 10px;
+  font-family: "Bebas Neue", cursive;
+  border-bottom: 5px solid black;
+}
+
+.navbar h3 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.navbar h3 span {
+  text-decoration: underline;
+  color: rgb(223, 96, 23);
+}
+
+.navbar h3 span:hover {
+  cursor: pointer;
+}
