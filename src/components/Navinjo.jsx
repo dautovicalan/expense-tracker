@@ -56,7 +56,7 @@ const Navinjo = ({ isLoggedIn, setIsLoggedIn }) => {
           <button
             onClick={() => {
               setIsLoggedIn(null);
-              localStorage.removeItem("currentUser");
+              localStorage.removeItem("token");
             }}
             className={buttonStyles["button-34"]}
           >

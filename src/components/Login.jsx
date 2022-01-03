@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import "../styles/Login.css";
 import axios from "axios";
@@ -15,6 +15,8 @@ const Login = ({ setIsLoggedIn }) => {
   const email = useRef();
   const pass = useRef();
 
+  const [isRegistering, setIsRegistering] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -26,6 +28,8 @@ const Login = ({ setIsLoggedIn }) => {
 
     const enteredEmail = email.current.value;
     const enteredPassword = pass.current.value;
+
+    console.log(enteredEmail);
 
     const response = await axios
       .post(urlSignIn, {
@@ -47,19 +51,20 @@ const Login = ({ setIsLoggedIn }) => {
         }
         alert(errorMessage);
       });
-    console.log(response);
 
-    localStorage.setItem(
-      "token",
-      JSON.stringify({
+    if (response) {
+      localStorage.setItem(
+        "token",
+        JSON.stringify({
+          email: response.email,
+          idToken: response.idToken,
+        })
+      );
+      setIsLoggedIn({
         email: response.email,
         idToken: response.idToken,
-      })
-    );
-    setIsLoggedIn({
-      email: response.email,
-      idToken: response.idToken,
-    });
+      });
+    }
   };
 
   const handleRegister = (event) => {
@@ -86,7 +91,6 @@ const Login = ({ setIsLoggedIn }) => {
       })
       .catch((err) => console.log(err));
   };
-
   return (
     <div className="login-form">
       <form onSubmit={handleSubmit}>
@@ -113,10 +117,19 @@ const Login = ({ setIsLoggedIn }) => {
           <a href="#" className="link">
             Forgot Your Password?
           </a>
+          <br />
+          {!isRegistering ? (
+            <button onClick={() => setIsRegistering(true)}>Register</button>
+          ) : (
+            <button onClick={() => setIsRegistering(false)}>Sign In</button>
+          )}
         </div>
         <div className="action">
-          <button>Register</button>
-          <button>Sign in</button>
+          {isRegistering ? (
+            <button onClick={handleRegister}>Register</button>
+          ) : (
+            <button onClick={handleSubmit}>Sign In</button>
+          )}
         </div>
       </form>
     </div>
