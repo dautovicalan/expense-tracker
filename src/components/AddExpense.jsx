@@ -1,14 +1,12 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/AddExpense.module.css";
 import MoneyInput from "@rschpdr/react-money-input";
-import updateData from "../Hooks/updateData";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 import { handleSubmit } from "../functions/handleSubmit";
 import SingleInput from "./SingleInput";
 
 const AddExpense = () => {
-
   // ! PLEASE DO NOT USE useRef HOOK FOR MENAGING VALUES THAT SHOULD BE CHANGED. INSTEAD USE useState WITH ONCHANGE EVENT
   const expenseName = useRef();
   const expenseType = useRef();

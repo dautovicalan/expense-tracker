@@ -1,6 +1,10 @@
 import React from "react";
 import { useRef } from "react";
 import "../styles/Login.css";
+import axios from "axios";
+
+const url =
+  "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyACmdpzxXl3eyEJvs44c3P_RVgDv9nze84";
 
 const Login = ({ setIsLoggedIn }) => {
   const email = useRef();
@@ -25,6 +29,23 @@ const Login = ({ setIsLoggedIn }) => {
       email: email.current.value,
       pass: pass.current.value,
     });
+  };
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const enteredEmail = email.current.value;
+    const enteredPassword = pass.current.value;
+
+    axios
+      .post(url, {
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true,
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -53,7 +74,7 @@ const Login = ({ setIsLoggedIn }) => {
           </a>
         </div>
         <div className="action">
-          <button>Register</button>
+          <button onClick={handleRegister}>Register</button>
           <button>Sign in</button>
         </div>
       </form>
