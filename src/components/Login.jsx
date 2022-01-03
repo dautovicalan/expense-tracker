@@ -3,14 +3,17 @@ import { useRef } from "react";
 import "../styles/Login.css";
 import axios from "axios";
 
-const url =
+const urlSignUp =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyACmdpzxXl3eyEJvs44c3P_RVgDv9nze84";
+
+const urlSignIn =
+  "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCwnDEANkIRujjiwyyG_6q89xH-U-no7js";
 
 const Login = ({ setIsLoggedIn }) => {
   const email = useRef();
   const pass = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
       email.current.value.trim().length === 0 &&
@@ -18,17 +21,31 @@ const Login = ({ setIsLoggedIn }) => {
     ) {
       return;
     }
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify({
-        email: email.current.value,
-        pass: pass.current.value,
+
+    const enteredEmail = email.current.value;
+    const enteredPassword = pass.current.value;
+
+    const response = await axios
+      .post(urlSignIn, {
+        email: enteredEmail,
+        password: enteredPassword,
+        returnSecureToken: true,
       })
-    );
-    setIsLoggedIn({
-      email: email.current.value,
-      pass: pass.current.value,
-    });
+      .then((res) => res.data)
+      .catch((err) => {
+        console.log(err.response);
+      });
+    // localStorage.setItem(
+    //   "currentUser",
+    //   JSON.stringify({
+    //     email: email.current.value,
+    //     pass: pass.current.value,
+    //   })
+    // );
+    // setIsLoggedIn({
+    //   email: email.current.value,
+    //   pass: pass.current.value,
+    // });
   };
 
   const handleRegister = (event) => {
@@ -36,8 +53,16 @@ const Login = ({ setIsLoggedIn }) => {
     const enteredEmail = email.current.value;
     const enteredPassword = pass.current.value;
 
+    if (
+      enteredEmail.trim().length === 0 ||
+      enteredPassword.trim().length === 0
+    ) {
+      alert("Please provide values");
+      return;
+    }
+
     axios
-      .post(url, {
+      .post(urlSignUp, {
         email: enteredEmail,
         password: enteredPassword,
         returnSecureToken: true,
@@ -58,6 +83,7 @@ const Login = ({ setIsLoggedIn }) => {
               type="email"
               placeholder="Email"
               autoComplete="nope"
+              required
               ref={email}
             />
           </div>
@@ -66,6 +92,7 @@ const Login = ({ setIsLoggedIn }) => {
               type="password"
               placeholder="Password"
               autoComplete="new-password"
+              required
               ref={pass}
             />
           </div>
@@ -74,7 +101,7 @@ const Login = ({ setIsLoggedIn }) => {
           </a>
         </div>
         <div className="action">
-          <button onClick={handleRegister}>Register</button>
+          <button>Register</button>
           <button>Sign in</button>
         </div>
       </form>
