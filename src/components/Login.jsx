@@ -2,6 +2,8 @@ import React from "react";
 import { useRef } from "react";
 import "../styles/Login.css";
 import axios from "axios";
+import { useContext } from "react";
+import { DataContext } from "../Context/DataContext";
 
 const urlSignUp =
   "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyACmdpzxXl3eyEJvs44c3P_RVgDv9nze84";
@@ -33,19 +35,31 @@ const Login = ({ setIsLoggedIn }) => {
       })
       .then((res) => res.data)
       .catch((err) => {
-        console.log(err.response);
+        let errorMessage = "Auth failed";
+        if (
+          err &&
+          err.response &&
+          err.response.data &&
+          err.response.data.error &&
+          err.response.data.error.message
+        ) {
+          errorMessage = err.response.data.error.message;
+        }
+        alert(errorMessage);
       });
-    // localStorage.setItem(
-    //   "currentUser",
-    //   JSON.stringify({
-    //     email: email.current.value,
-    //     pass: pass.current.value,
-    //   })
-    // );
-    // setIsLoggedIn({
-    //   email: email.current.value,
-    //   pass: pass.current.value,
-    // });
+    console.log(response);
+
+    localStorage.setItem(
+      "token",
+      JSON.stringify({
+        email: response.email,
+        idToken: response.idToken,
+      })
+    );
+    setIsLoggedIn({
+      email: response.email,
+      idToken: response.idToken,
+    });
   };
 
   const handleRegister = (event) => {

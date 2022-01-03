@@ -14,14 +14,14 @@ import ShowMoneyStatusPage from './pages/ShowMoneyStatusPage';
 import ProfilePage from './pages/ProfilePage';
 
 const getUser = () => {
-  return JSON.parse((localStorage.getItem("currentUser")));
+  return JSON.parse((localStorage.getItem("token")));
 }
 
 function App() {
   
   const {data: fetchedData, isLoading} = useFetch('data');
   const[data, setData] = useState(fetchedData);
-  const[isLoggedIn, setIsLoggedIn] = useState(getUser);
+  const[isLoggedIn, setIsLoggedIn] = useState(getUser());
   const[currentCurrency, setCurrentCurrency] = useState("KN")
   const dataValue = useMemo(() => ({data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency}),[data, setData, isLoggedIn, setIsLoggedIn, currentCurrency, setCurrentCurrency]);
 
